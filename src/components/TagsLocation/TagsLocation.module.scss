@@ -1,0 +1,41 @@
+.tags-location {
+  // overflow-x: auto;
+}
+
+.list-tag {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    padding: 5px;
+    list-style: none;
+  }
+}
+
+
+.tag {
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.link {
+  color: var(--currentColor);
+  text-decoration: none;
+}
+
+.icon {
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+.link,
+.icon {
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.6;
+  }
+}

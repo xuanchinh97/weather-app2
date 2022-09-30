@@ -18,13 +18,12 @@ function Main() {
     }
 
     //vị trí hiện tại
-    function getLocationCurrent() {
-        let lon;
-        let lat;
+    function getLocationCurrent(e) {
+        e.preventDefault()
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(async (position) => {
-                lon = position.coords.longitude;
-                lat = position.coords.latitude;
+                let lon = position.coords.longitude;
+                let lat = position.coords.latitude;
                 await fetchDataWeather(state, { lat, lon })
                 reRender()
                 setShow(true)
@@ -39,6 +38,9 @@ function Main() {
         setQuery(state, city)
         let lat = getLat(state)
         let lon = getLon(state)
+        if (city === "") {
+            return
+        }
         await fetchDataWeather(state, { lat, lon })
         reRender()
         setShow(true)
@@ -59,7 +61,7 @@ function Main() {
             }
             {!show &&
                 <div className='container py-0'>
-                    <p className='mb-0'>Hãy nhập địa điểm bạn muốn vào ô tìm kiếm.</p>
+                    <p className='mb-0 mt-4'>Hãy nhập địa điểm bạn muốn vào ô tìm kiếm.</p>
                 </div>
             }
         </main>

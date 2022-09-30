@@ -12,10 +12,18 @@ function WeatherContainer() {
     return (
         <div className={`${style['weather-container']}  py-4`}>
             <div className='container'>
-                {getElementError(state).err && <ShowError getQuery={getQuery} />}
-                <Location />
-                <CurrentWeather />
-                <DailyWeather />
+                {getElementError(state).err &&
+                    <ShowError getQuery={getQuery} />
+                }
+
+                {!getElementError(state).err &&
+                    <>
+                        <Location />
+                        <CurrentWeather />
+                        <DailyWeather />
+                    </>
+                }
+
             </div>
         </div>
     )

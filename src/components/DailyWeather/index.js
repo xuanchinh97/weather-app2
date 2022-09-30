@@ -105,8 +105,8 @@ function DailyWeather() {
                         <p className="mb-0">Nhiệt độ cao nhất {Math.round(getDaily()[0].temp.max)}&deg;, thấp nhất {Math.round(getDaily()[0].temp.min)}&deg;</p>
                       </div>
                       <div className="col-12 col-sm-auto my-2">
-                        <p className="mb-0">Mặt trời mọc {formatTime(getDaily()[0].sunrise)}</p>
-                        <p className="mb-0">Mặt trời lặn {formatTime(getDaily()[0].sunset)}</p>
+                        <p className="mb-0">Mặt trời mọc: {formatTime(getDaily()[0].sunrise)}</p>
+                        <p className="mb-0">Mặt trời lặn: {formatTime(getDaily()[0].sunset)}</p>
                       </div>
                     </div>
                   </div>
@@ -120,8 +120,6 @@ function DailyWeather() {
                         <p className={`${style.tag} me-4`}>Chỉ số UV {getDaily()[0].uvi}%</p>
                         <p className={`${style.tag} me-4`}>Khối lượng mưa: {getDaily()[0].rain}mm</p>
                         <p className={`${style.tag} me-4`}>Tốc độ gió: {getDaily()[0].wind_speed}m/s</p>
-                        {/* <p className={`${style.tag} me-4`}>Áp suất khí quyển: {getDaily()[0].pressure} hPa</p>
-                        <p className={`${style.tag} me-4`}>Nhiệt độ khí quyển: {getDaily()[0].dew_point} &deg;</p> */}
                       </div>
                     </div>
                   </div>

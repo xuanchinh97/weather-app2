@@ -5,12 +5,10 @@ function ShowError() {
 
   return (
     <div className={style.clearfix}>
-      <div className='mb-4'>
-        <div className={style.error}>
-          <div className='row align-items-center'>
-            <div className='col'>
-              <small>Không tìm thấy </small>
-            </div>
+      <div className={style.error}>
+        <div className='row align-items-center'>
+          <div className='col'>
+            <small>Không tìm thấy </small>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ function CurrentWeather() {
 
   const getIcon = () => {
     let icon = getWeatherCurrent ? getWeatherCurrent.weather[0].icon : ""
-    return `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    return `https://openweathermap.org/img/wn/${icon}@2x.png`;
   }
 
   const getFellsLike = () => {
@@ -107,11 +107,10 @@ function CurrentWeather() {
             <div className='col-auto' >
               <div className='px-0 p-sm-3'>
                 <p className='mb-0'>
+                  Cảm thấy như {Math.round(getFellsLike())}&deg;, có <i>{getDescription()}</i>
                   <span className={style['feed-like']} >
-                    Cảm thấy như {Math.round(getFellsLike())}&deg;.
                   </span>
                   <span className={style.description}>
-                    Có  <i>{getDescription()}</i>
                   </span>
                 </p>
                 <p className='mb-0'>Nhiệt độ thấp nhất là {Math.round(getTempMin())}&deg;</p>
@@ -137,12 +136,8 @@ function CurrentWeather() {
               <p className='mb-0'>{getClouds()} (%)</p>
             </div>
             <div className='col-12 col-sm-auto my-2'>
-              <p className='mb-0'>
-                <small> Mặt trời mọc: {getSunrise()}</small>
-              </p>
-              <p className='mb-0'>
-                <small> Mặt trời lặn: {getSunset()}</small>
-              </p>
+              <p className='mb-0'>Mặt trời mọc: {getSunrise()}</p>
+              <p className='mb-0'>Mặt trời lặn: {getSunset()}</p>
             </div>
           </div>
 

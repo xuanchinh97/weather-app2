@@ -9,7 +9,6 @@ function TagsLocation({ reRender, setCity, getData, getLocationCurrent }) {
   const { removeTag } = mutations
 
   const fetchDataByTag = async (e, city) => {
-    console.log("first", city)
     await setCity(city)
     await getData(e)
     await reRender()
@@ -25,7 +24,7 @@ function TagsLocation({ reRender, setCity, getData, getLocationCurrent }) {
       <div className='d-flex flex-wrap align-items-center'>
         <div className='col-auto pe-2'>
           <small className={style.tag}>
-            <a href='/#' onClick={() => getLocationCurrent()}>
+            <a href='/#' onClick={(e) => getLocationCurrent(e)}>
               <FontAwesomeIcon icon={faMapMarkedAlt} />
             </a>
           </small>

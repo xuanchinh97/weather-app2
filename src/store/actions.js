@@ -11,7 +11,6 @@ const actions = {
         let lang = `lang=${state.parameters.lang}`
         let exclude = `exclude=minutely,hourly,daily`
         let stringAPICurrent = `${state.urlCurrent}?q=${q}&${lang}&${units}&${exclude}&${appid}`
-
         // console.log({ "stringAPICurrent": stringAPICurrent })
 
         if (lat && lon) {
@@ -34,6 +33,9 @@ const actions = {
                     setError(state, true, state.parameters)
                 }
             })
+            .catch(e => {
+                console.log(e)
+            })
 
         let lat02 = `lat=${state.parameters.lat}`
         let lon02 = `lon=${state.parameters.lon}`
@@ -43,8 +45,11 @@ const actions = {
         await fetch(stringAPICall)
             .then(res => res.json())
             .then(data => {
-                // console.log({ "stringAPICall": data })
                 setWeatherOneCall(state, data)
+                // console.log({ "stringAPICall": data })
+            })
+            .catch(e => {
+                console.log(e)
             })
     }
 
